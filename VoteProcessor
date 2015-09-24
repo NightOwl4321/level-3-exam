@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+public class VoteProcessor {
+	public static void main(String[] args) {
+		VoteProcessor vp = new VoteProcessor();
+	}
+
+	String calculateElectionWinner(ArrayList<String> votes1) {
+		int pope = 0;
+		int edward = 0;
+		
+		for(String vote: votes1) {
+			if(vote.equalsIgnoreCase("pope francis")) {
+				pope++;
+			} else if(vote.equalsIgnoreCase("Edward Snowden")) {
+				edward++;
+			}
+		}
+		
+		if(pope > edward) {
+			return "pope francis";
+		} else if(pope < edward) {
+			return "Edward Snowden";
+		} else {
+			return "TIE";
+		}
+		
+	}
+}
